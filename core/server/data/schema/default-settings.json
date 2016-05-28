@@ -61,11 +61,20 @@
         "ghost_foot": {
             "defaultValue" : ""
         },
+        "facebook": {
+            "defaultValue" : ""
+        },
+        "twitter": {
+            "defaultValue" : ""
+        },
         "labs": {
             "defaultValue": "{}"
         },
         "navigation": {
             "defaultValue": "[{\"label\":\"Home\", \"url\":\"/\"}]"
+        },
+        "slack": {
+            "defaultValue": "[{\"url\":\"\"}]"
         }
     },
     "theme": {

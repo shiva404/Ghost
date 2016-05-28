@@ -192,6 +192,12 @@ export function testConfig() {
         };
     });
 
+    /* Apps - Slack Test Notification --------------------------------------------------------- */
+
+    this.post('/slack/test', function () {
+        return {};
+    });
+
     /* Slugs ---------------------------------------------------------------- */
 
     this.get('/slugs/post/:slug/', function (db, request) {
@@ -339,6 +345,16 @@ export function testConfig() {
     this.get('/users/:id', function (db, request) {
         return {
             users: [db.users.find(request.params.id)]
+        };
+    });
+
+    this.put('/users/:id/', function (db, request) {
+        let {id} = request.params;
+        let [attrs] = JSON.parse(request.requestBody).users;
+        let record = db.users.update(id, attrs);
+
+        return {
+            user: record
         };
     });
 }
